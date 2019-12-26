@@ -81,4 +81,17 @@ public class Conjugation {
 
     public Conjugation() {
     }
+
+    @Override
+    public String toString() {
+        return "Conjugation{" +
+                "infinitive=" + infinitive +
+                ", ja=" + ja +
+                ", ty=" + ty +
+                ", on_ona_ono=" + on_ona_ono +
+                ", my=" + my +
+                ", wy=" + wy +
+                ", oni_one=" + oni_one +
+                '}';
+    }
 }

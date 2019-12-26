@@ -31,4 +31,9 @@ public class Word {
     public Word(String sourceWord) {
         this.sourceWord = sourceWord;
     }
+
+    @Override
+    public String toString() {
+        return this.sourceWord+" -> "+this.translationWord;
+    }
 }
