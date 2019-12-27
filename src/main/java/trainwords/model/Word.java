@@ -34,6 +34,7 @@ public class Word {
 
     @Override
     public String toString() {
-        return this.sourceWord+" -> "+this.translationWord;
+        String word = (this.translationWord==null?"\"\"":this.translationWord);
+        return this.sourceWord+" -> "+word;
     }
 }

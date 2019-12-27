@@ -3,11 +3,12 @@ import trainwords.model.ConjugationStore;
 import trainwords.model.Word;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        Word word = new Word("byc","бути");
+/*        Word word = new Word("byc","бути");
 
         Word ja = new Word("jestem");
         Word ty = new Word("jestes");
@@ -26,14 +27,41 @@ public class Main {
         ConjugationStore conjugationStore = new ConjugationStore();
         conjugationStore.addConjugation(conByc);
 
-        conjugationStore.save("d:\\pol.json");
+        conjugationStore.save("d:\\pol.json");*/
 
 
         ConjugationStore conjugationStore2 = new ConjugationStore();
         conjugationStore2.load("d:\\pol.json");
         System.out.println(conjugationStore2.size());
+/*
         for (Conjugation conjugation:conjugationStore2.getConjugationStore()){
             System.out.println(conjugation);
         }
+*/
+
+        Word word = new Word("znac","бути");
+
+        Word ja = new Word("znam");
+        Word ty = new Word("znasz");
+        Word on = new Word("zna");
+        Word my = new Word("znamy");
+        Word wy = new Word("znacie");
+        Word oni = new Word("znaja");
+        Conjugation conZnac = new Conjugation(word);
+        conZnac.setJa(ja);
+        conZnac.setTy(ty);
+        conZnac.setOn_ona_ono(on);
+        conZnac.setMy(my);
+        conZnac.setWy(wy);
+        conZnac.setOni_one(oni);
+
+        List<Conjugation> lists = conjugationStore2.getConjugationStore();
+        lists.add(conZnac);
+        conjugationStore2.setConjugationStore(lists);
+
+        for (Conjugation conjugation:conjugationStore2.getConjugationStore()){
+            System.out.println(conjugation);
+        }
+        conjugationStore2.save("d:\\pol.json");
     }
 }

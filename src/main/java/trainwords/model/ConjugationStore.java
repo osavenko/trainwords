@@ -12,9 +12,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ConjugationStore {
-    private List<Conjugation> lists = new ArrayList<Conjugation>();
+    private List<Conjugation> lists;
 
     public ConjugationStore() {
+        lists = new ArrayList<Conjugation>();
     }
 
     public ConjugationStore(List<Conjugation> lists) {
@@ -45,7 +46,7 @@ public class ConjugationStore {
     }
     public void load(String fileName) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        List<Conjugation> rlist = Arrays.asList(mapper.readValue(new File(fileName),Conjugation[].class));
+        List<Conjugation> rlist = new ArrayList<Conjugation>(Arrays.asList(mapper.readValue(new File(fileName),Conjugation[].class)));
         this.lists = rlist;
     }
 }
