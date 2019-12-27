@@ -1,5 +1,4 @@
 import trainwords.model.Conjugation;
-import trainwords.model.ConjugationStore;
 import trainwords.model.Word;
 
 import java.io.IOException;
@@ -24,22 +23,22 @@ public class Main {
         conByc.setWy(wy);
         conByc.setOni_one(oni);
 
-        ConjugationStore conjugationStore = new ConjugationStore();
+        ConjugationStoreage conjugationStorage = new ConjugationStorage();
         conjugationStore.addConjugation(conByc);
 
         conjugationStore.save("d:\\pol.json");*/
 
-
-        ConjugationStore conjugationStore2 = new ConjugationStore();
-        conjugationStore2.load("d:\\pol.json");
-        System.out.println(conjugationStore2.size());
 /*
-        for (Conjugation conjugation:conjugationStore2.getConjugationStore()){
+        ConjugationStorage conjugationStore2 = new ConjugationStorage();
+        conjugationStore2.load("d:\\pol.json");
+        System.out.println(conjugationStore2.size());*/
+/*
+        for (Conjugation conjugation:conjugationStore2.getConjugationStorage()){
             System.out.println(conjugation);
         }
 */
 
-        Word word = new Word("znac","бути");
+/*        Word word = new Word("znac","бути");
 
         Word ja = new Word("znam");
         Word ty = new Word("znasz");
@@ -55,13 +54,13 @@ public class Main {
         conZnac.setWy(wy);
         conZnac.setOni_one(oni);
 
-        List<Conjugation> lists = conjugationStore2.getConjugationStore();
+        List<Conjugation> lists = conjugationStore2.getConjugationStorage();
         lists.add(conZnac);
-        conjugationStore2.setConjugationStore(lists);
+        conjugationStore2.setConjugationStorage(lists);
 
-        for (Conjugation conjugation:conjugationStore2.getConjugationStore()){
+        for (Conjugation conjugation:conjugationStore2.getConjugationStorage()){
             System.out.println(conjugation);
         }
-        conjugationStore2.save("d:\\pol.json");
+        conjugationStore2.save("d:\\pol.json");*/
     }
 }

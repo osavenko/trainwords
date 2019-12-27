@@ -11,23 +11,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ConjugationStore {
+public class ConjugationStorage {
     private List<Conjugation> lists;
 
-    public ConjugationStore() {
+    public ConjugationStorage() {
         lists = new ArrayList<Conjugation>();
     }
 
-    public ConjugationStore(List<Conjugation> lists) {
+    public ConjugationStorage(List<Conjugation> lists) {
         this.lists = lists;
     }
     public void addConjugation(Conjugation conjugation){
         lists.add(conjugation);
     }
-    public void setConjugationStore(List<Conjugation> lists){
+    public void setConjugationStorage(List<Conjugation> lists){
         this.lists = lists;
     }
-    public List<Conjugation> getConjugationStore(){
+    public List<Conjugation> getConjugationStorage(){
         return this.lists;
     }
     public Conjugation getConjugationByIndex(int id){

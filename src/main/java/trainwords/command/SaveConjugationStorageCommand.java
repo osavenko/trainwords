@@ -1,6 +1,6 @@
 package trainwords.command;
 
-public class SaveConjugationStoreCommand implements Command {
+public class SaveConjugationStorageCommand implements Command {
     public void execute() {
 
     }

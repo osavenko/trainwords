@@ -1,7 +1,7 @@
 package trainwords.command;
 
 
-public class OpenConjugationStoreCommand implements Command {
+public class OpenConjugationStorageCommand implements Command {
     public void execute() {
 
     }
