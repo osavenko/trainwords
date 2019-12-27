@@ -9,16 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
-    public static List<Conjugation> conjugations;
-    static {
-        conjugations = new ArrayList<Conjugation>();
-    }
+    public static List<Conjugation> conjugations = new ArrayList<Conjugation>();
+
     public static void main(String[] args) throws IOException, IllegalOperationException {
         Operation requiredOperation = Operation.EXIT;
         do{
             ConsoleWorker.printMenu();
             requiredOperation = ConsoleWorker.askOperation();
             CommandExecoter.execute(requiredOperation,conjugations);
+            conjugations = CommandExecoter.getList();
         }while(requiredOperation!=Operation.EXIT);
 /*        Word word = new Word("byc","бути");
 
