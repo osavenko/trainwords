@@ -6,7 +6,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CommandExecoter {
+
     static Map<Operation,Command> commandMap = new HashMap<Operation, Command>();
+
+    private CommandExecoter() {
+    }
+
     static {
         commandMap.put(Operation.EXIT, new Command() {
             public void execute() {
