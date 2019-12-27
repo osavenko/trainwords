@@ -5,16 +5,20 @@ import trainwords.model.Conjugation;
 import trainwords.model.Word;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static List<Conjugation> conjugations;
+    static {
+        conjugations = new ArrayList<Conjugation>();
+    }
     public static void main(String[] args) throws IOException, IllegalOperationException {
         Operation requiredOperation = Operation.EXIT;
         do{
             ConsoleWorker.printMenu();
             requiredOperation = ConsoleWorker.askOperation();
-            CommandExecoter.execute(requiredOperation);
+            CommandExecoter.execute(requiredOperation,conjugations);
         }while(requiredOperation!=Operation.EXIT);
 /*        Word word = new Word("byc","бути");
 
