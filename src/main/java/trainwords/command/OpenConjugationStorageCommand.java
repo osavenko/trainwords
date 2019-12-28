@@ -1,15 +1,12 @@
 package trainwords.command;
 
 
-import trainwords.model.Conjugation;
 import trainwords.model.ConjugationStorage;
 
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
 
 public class OpenConjugationStorageCommand extends FileWorker implements Command {
-    public void execute(List<Conjugation> list) {
+    public void execute() {
         System.out.println("Открыт файл хранилища спряжений глаголов.");
         try {
             askFileName();

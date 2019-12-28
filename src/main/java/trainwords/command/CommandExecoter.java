@@ -26,7 +26,7 @@ public class CommandExecoter {
 
     static {
         commandMap.put(Operation.EXIT, new Command() {
-            public void execute(List<Conjugation> list) {
+            public void execute() {
                 System.out.println("До скорых встреч!");
             }
         });
@@ -34,9 +34,9 @@ public class CommandExecoter {
         commandMap.put(Operation.SAVE_CONJUGATION_STORAGE, new SaveConjugationStorageCommand());
         commandMap.put(Operation.ADD_NEW_CONJUGATION, new AddNewConjugationCommand());
     }
-    public static void execute(Operation operation, List<Conjugation> list){
+    public static void execute(Operation operation){
         Command com = commandMap.get(operation);
-        com.execute(list);
+        com.execute();
         if (com instanceof FileWorker){
             setList(((FileWorker) com).getList());
         }

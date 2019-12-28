@@ -2,7 +2,6 @@ import trainwords.Operation;
 import trainwords.command.CommandExecoter;
 import trainwords.ex.IllegalOperationException;
 import trainwords.model.Conjugation;
-import trainwords.model.Word;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -11,12 +10,16 @@ import java.util.List;
 public class Main {
     public static List<Conjugation> conjugations = new ArrayList<Conjugation>();
 
-    public static void main(String[] args) throws IOException, IllegalOperationException {
+    public static void main(String[] args) throws IOException {
         Operation requiredOperation = Operation.EXIT;
         do{
             ConsoleWorker.printMenu();
-            requiredOperation = ConsoleWorker.askOperation();
-            CommandExecoter.execute(requiredOperation,conjugations);
+
+            try {
+                requiredOperation = ConsoleWorker.askOperation();
+            } catch (IllegalOperationException e) {
+            }
+            CommandExecoter.execute(requiredOperation);
             conjugations = CommandExecoter.getList();
         }while(requiredOperation!=Operation.EXIT);
 /*        Word word = new Word("byc","бути");
